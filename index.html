@@ -1,17 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feels Heaven — Modern Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #101820;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --accent: #eab308;
+            --radius: 14px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color .2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            width: 100%;
+            max-width: 1200px;
+            padding: 60px 8%;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&q=60&auto=format&fit=crop') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px;
+            border-radius: 0 0 50% 50% / 8%;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #fef9c3;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        .dish {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dish h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .dish p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .price {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform .3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        form {
+            display: grid;
+            gap: 14px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            font-family: inherit;
+        }
+
+        button {
+            background: var(--accent);
+            color: #000;
+            border: 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            text-align: center;
+            padding: 20px;
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        @media(max-width:700px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
-   
-<!-- learning heading tags -->
-  <h1> My First Website</h1>
-  <h2>im h2 heading</h2>
-  <h3>im h3 heading</h3>
-  <h4>im h4 heading</h4>
-  <h5>im h5 heading</h5>
-  <h6>im h6 heading</h6>
-  <p>this is sneha varikuntla, and i learn coding at manaclg level up</p>
+    <header>
+        <div class="logo">Bistro Haven</div>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reserve">Reserve</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Feels Haven</h1>
+        <p>Fine dining. Fresh flavors. Warm ambience.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <h3 style="margin-top:20px">Starters</h3>
+        <div class="menu-grid">
+            <div class="dish">
+                <h3>Bruschetta</h3>
+                <p>Toasted bread with tomato, garlic & basil.</p>
+                <span class="price">₹220</span>
+            </div>
+            <div class="dish">
+                <h3>Caesar Salad</h3>
+                <p>Crisp romaine, parmesan, and house dressing.</p>
+                <span class="price">₹280</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top:30px">Main Course</h3>
+        <div class="menu-grid">
+            <div class="dish">
+                <h3>Grilled Salmon</h3>
+                <p>Served with lemon butter sauce & vegetables.</p>
+                <span class="price">₹820</span>
+            </div>
+            <div class="dish">
+                <h3>Pasta Alfredo</h3>
+                <p>Creamy sauce with parmesan & mushrooms.</p>
+                <span class="price">₹540</span>
+            </div>
+            <div class="dish">
+                <h3>Paneer Steak</h3>
+                <p>Grilled paneer with herbs & roasted veggies.</p>
+                <span class="price">₹460</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top:30px">Desserts</h3>
+        <div class="menu-grid">
+            <div class="dish">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Warm chocolate cake with gooey center.</p>
+                <span class="price">₹280</span>
+            </div>
+            <div class="dish">
+                <h3>Tiramisu</h3>
+                <p>Classic Italian coffee-flavored dessert.</p>
+                <span class="price">₹300</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=60" alt="Dish">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec393a?w=600&q=60" alt="Restaurant interior">
+            <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ce?w=600&q=60" alt="Chef">
+            <img src="https://images.unsplash.com/photo-1565958011705-44e21190f8f8?w=600&q=60" alt="Dessert">
+        </div>
+    </section>
+
+    <section id="reserve">
+        <h2>Reserve a Table</h2>
+        <form id="reserveForm">
+            <input name="name" placeholder="Full Name" required>
+            <input name="email" placeholder="Email" type="email" required>
+            <input name="date" type="date" required>
+            <select name="guests" required>
+                <option value="">Guests</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+            </select>
+            <textarea name="message" placeholder="Special requests"></textarea>
+            <button type="submit">Reserve Now</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: snehavarikuntla12@bistrohaven.com</p>
+        <p>Phone: 7901021579</p>
+        <p>Address:Hyderabad,Telangana</p>
+    </section>
+
+    <footer>© <span id="year"></span> Bistro Haven · Crafted with ❤️</footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('reserveForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Reservation submitted (demo)');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>
